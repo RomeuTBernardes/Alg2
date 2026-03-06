@@ -1,4 +1,3 @@
-// este código reliza uma potência, de uma forma otimizada 
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
