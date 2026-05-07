@@ -31,13 +31,24 @@ int* InsertionSort(int vetor[], int posInicio, int posFim)
 
 int main()
 {
-	int v[10] = {4, 19, 32, 1, 31, 76, 54, 90, 89, 15};
-	InsertionSort(v, 0, 9);
-	for(int i = 0; i < 10; i++)
+	int v[50];
+	int n;
+	printf("tamanho do vetor: ");
+	scanf("%d", &n);
+
+	if(n > 50)
 	{
-		printf("%d\n", v[i]);
+		printf("TAMANHO MÁXIMO 50!\n");
+		return 1;
 	}
 
+	for(int i = 0; i < n; i++) scanf("%d", &v[i]);
+
+	InsertionSort(v, 0, n - 1);
+
+	for(int i = 0; i < n; i++) printf("%d ", v[i]);
+
+	printf("\n");
 	return 0;
 }
 

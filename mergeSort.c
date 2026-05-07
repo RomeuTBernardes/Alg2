@@ -44,12 +44,24 @@ int* mergeSort(int v[], int a, int b)
 
 int main()
 {
-	int v[10] = {4, 19, 32, 1, 31, 76, 54, 90, 89, 15};
+	int v[50];
+	int n;
+	printf("tamanho do vetor: ");
+	scanf("%d", &n);
 
-	mergeSort(v, 0, 9);
+	if(n > 50)
+	{
+		printf("TAMANHO MÁXIMO 50!\n");
+		return 1;
+	}
 
-	for(int i = 0; i < 10; i++)
-		printf("%d\n", v[i]);
+	for(int i = 0; i < n; i++) scanf("%d", &v[i]);
+
+	mergeSort(v, 0, n - 1);
+
+	for(int i = 0; i < n; i++) printf("%d ", v[i]);
+
+	printf("\n");
 
 	return 0;
 }

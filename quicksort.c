@@ -25,10 +25,22 @@ int* quickSort(int *v, int a, int b)
         quickSort(v, m + 1, b);
 }
 
-void main()
+int main()
 {
-        int v[10] = {4, 19, 32, 1, 31, 76, 54, 90, 89, 15};
-        quickSort(v, 0, 9);
-        for(int i = 0; i < 10; i++) printf("%d ", v[i]);
+        int v[50];
+	int n;
+	printf("tamanho do vetor: ");
+	scanf("%d", &n);
+
+	if(n > 50)
+	{
+		printf("TAMANHO MÁXIMO 50!\n");
+		return 1;
+	}
+
+	for(int i = 0; i < n; i++) scanf("%d", &v[i]);
+
+        quickSort(v, 0, n - 1);
+        for(int i = 0; i < n; i++) printf("%d ", v[i]);
         printf("\n");
 }

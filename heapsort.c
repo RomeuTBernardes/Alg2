@@ -39,11 +39,25 @@ void heapSort(int *v, int n)
 	}
 }
 
-void main()
+int main()
 {
-	int v[7] = {4, 19, 32, 1, 31, 76, 54};
-	heapSort(v, 6);
+	int v[50];
+	int n;
+	printf("tamanho do vetor: ");
+	scanf("%d", &n);
 
-	for(int i = 0; i < 7; i++) printf("%d ", v[i]);
+	if(n > 50)
+	{
+		printf("TAMANHO MÁXIMO 50!\n");
+		return 1;
+	}
+
+	for(int i = 0; i < n; i++) scanf("%d", &v[i]);
+
+	heapSort(v, n - 1);
+
+	for(int i = 0; i < n; i++) printf("%d ", v[i]);
 	printf("\n");
+
+	return 0;
 }
